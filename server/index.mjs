@@ -30,7 +30,7 @@ export async function createHandler({
   const trust = Math.max(0, Math.min(5, Number.parseInt(trustProxy, 10) || 0));
   // Client address for login limits. Forwarded headers are used only when TRUST_PROXY says how many proxies sit in front of Node.
   const clientIp = (req) => {
-    const remote = req.socket.remoteAddress ?? 'unknown';
+    const remote = req.socket?.remoteAddress ?? 'unknown';
     if (!trust) return remote;
     const hops = String(req.headers['x-forwarded-for'] ?? '')
       .split(',')
