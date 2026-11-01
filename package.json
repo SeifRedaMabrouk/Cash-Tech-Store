@@ -1,0 +1,35 @@
+{
+  "name": "cash-tech-portable",
+  "version": "0.3.9",
+  "private": true,
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "admin:create": "node --env-file-if-exists=.env server/create-admin.mjs",
+    "admin:unlock": "node --env-file-if-exists=.env server/unlock-admin.mjs",
+    "test": "node --test \"tests/*.test.mjs\"",
+    "typecheck": "tsc --noEmit",
+    "backup": "node --env-file-if-exists=.env scripts/backup.mjs",
+    "db:setup": "node --env-file-if-exists=.env scripts/db-setup.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "1.31.0",
+    "pg": "8.16.3",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20260515.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "typescript": "5.9.3",
+    "vite": "8.3.5"
+  },
+  "type": "module"
+}
